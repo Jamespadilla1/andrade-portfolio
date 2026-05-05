@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lance Humpry Andrade | Portfolio</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+    <h1 class="logo">Lance Humpry Andrade</h1>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <h2>I design and build modern, responsive web experiences.</h2>
+    <p>
+      I'm Lance Humpry Andrade, a developer focused on creating visually engaging
+      and performance-optimized websites that deliver real user impact.
+    </p>
+
+```
+<a href="https://www.linkedin.com/in/lance-humpry-d-andrade-2002a9408/" target="_blank" class="btn">View LinkedIn</a>
+<a href="#projects" class="btn secondary">View My Work</a>
+```
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+
+```
+<div class="project-grid">
+
+  <div class="card" onclick="openModal('Courting Site','images/courtingsite.png','Responsive courting platform with modern UI.','#')">
+    <img src="images/courtingsite.png" alt="Courting Site">
+    <h3>Courting Site</h3>
+    <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+    <p>Modern responsive platform with clean UI.</p>
+  </div>
+
+  <div class="card" onclick="openModal('Business Website','images/bahogotot.png','Dynamic site with API integration.','#')">
+    <img src="images/bahogotot.png" alt="Business Site">
+    <h3>Business Website</h3>
+    <p><strong>Tech:</strong> JavaScript, API</p>
+    <p>Dynamic content using real-time data.</p>
+  </div>
+
+  <div class="card" onclick="openModal('Valentines Project','images/valentines.png','Interactive themed experience.','#')">
+    <img src="images/valentines.png" alt="Valentines">
+    <h3>Valentines Project</h3>
+    <p><strong>Tech:</strong> HTML, CSS</p>
+    <p>Creative UI with smooth interaction.</p>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- RESUME -->
+
+  <section id="resume" class="section">
+    <h2>Resume</h2>
+
+```
+<div class="resume">
+
+  <div class="resume-block">
+    <h3>Professional Summary</h3>
+    <p>
+      Web Developer specializing in responsive front-end development and performance optimization.
+    </p>
+  </div>
+
+  <div class="resume-block">
+    <h3>Technical Skills</h3>
+    <ul>
+      <li><strong>Languages:</strong> HTML, CSS, JavaScript</li>
+      <li><strong>Tools:</strong> Git, GitHub, VS Code</li>
+      <li><strong>Design:</strong> Responsive Design, UI/UX</li>
+    </ul>
+  </div>
+
+  <div class="resume-block">
+    <h3>Project Experience</h3>
+
+    <p><strong>Courting Site</strong></p>
+    <ul>
+      <li>Built responsive UI</li>
+      <li>Optimized performance</li>
+    </ul>
+
+    <p><strong>Valentines Project</strong></p>
+    <ul>
+      <li>Designed interactive UI</li>
+    </ul>
+  </div>
+
+  <div class="resume-block">
+    <h3>Education</h3>
+    <p><strong>DMIA College</strong></p>
+    <p>Graphic Design (Ongoing)</p>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+
+```
+<form id="contactForm">
+  <input type="text" id="name" placeholder="Your Name" required />
+  <input type="email" id="email" placeholder="Your Email" required />
+  <textarea id="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+<p id="status"></p>
+```
+
+  </section>
+
+  <!-- MODAL -->
+
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modalImg" src="">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <a id="modalLink" href="#" target="_blank">View Project</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Lance Humpry Andrade</p>
+  </footer>
+
+  <script>
+    // CONTACT FORM
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      status.textContent = "Message sent successfully!";
+      form.reset();
+    });
+
+    // MODAL FUNCTION
+    const modal = document.getElementById("projectModal");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalLink = document.getElementById("modalLink");
+    const closeBtn = document.querySelector(".close");
+
+    function openModal(title, img, desc, link) {
+      modal.style.display = "flex";
+      modalTitle.textContent = title;
+      modalImg.src = img;
+      modalDesc.textContent = desc;
+      modalLink.href = link;
+    }
+
+    closeBtn.onclick = () => modal.style.display = "none";
+
+    window.onclick = (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    };
+  </script>
+
+</body>
+</html>
